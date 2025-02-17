@@ -54,6 +54,3 @@ class DeviceInfo {
 // Usage with custom key and iv
 const customSecretKey = CryptoJS.enc.Utf8.parse('testkey123456789');
 const customIv = CryptoJS.enc.Utf8.parse('testiv1234567890');
-const deviceInfo = new DeviceInfo(customSecretKey, customIv);
-const encryptedData = deviceInfo.getDevice('/path', 'some data');
-console.log(encryptedData);
