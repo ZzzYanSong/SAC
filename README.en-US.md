@@ -9,7 +9,7 @@ A simple and lightweight web anti-crawler implementation
 ## 🔰🛡Shielding link🛡🔰
 - The implementation code of this project is extremely simple, only providing an idea, and the business logic needs to be expanded by yourself
 - This project can theoretically prevent malicious requests to the interface, but the security depends on your JS encryption of the front-end page, and it cannot guarantee security 100%
-- The device fingerprint of this project cannot detect fingerprint browsers, because it aims to achieve a zero-cost protection for the website interface rather than as a browser fingerprint detection
+- The device fingerprint of this project cannot detect fingerprinted browsers because it aims to provide zero-cost protection for website public interfaces rather than browser fingerprint detection.
 
 ## Purpose
 
