@@ -6,6 +6,11 @@ A simple and lightweight web anti-crawler implementation
 > Just add dozens of lines of JavaScript code (before encryption) to the front end to add safe and effective protection measures to your web interface service.
 
 **You can take the [online test](https://test.zhuyansong.com) on this page**
+## 🔰🛡Shielding link🛡🔰
+- The implementation code of this project is extremely simple, only providing an idea, and the business logic needs to be expanded by yourself
+- This project can theoretically prevent malicious requests to the interface, but the security depends on your JS encryption of the front-end page, and it cannot guarantee security 100%
+- The device fingerprint of this project cannot detect fingerprint browsers, because it aims to achieve a zero-cost protection for the website interface rather than as a browser fingerprint detection
+
 ## Purpose
 
 At present, many personal webmasters provide various services to users. However, in reality, public interfaces are often easily called and crawled in large quantities, which may deviate from the original intention of the webmaster, causing the interface to be abused or appear in places where it should not appear.
