@@ -54,6 +54,30 @@ headers传入方式的可以用于对抗反爬
 
 cookie传入方式可以用于记录设备指纹，分析用户行为。
 
+## 数据字串解读
+
+前端一般生成的数据字串如下，已附带注释
+```json
+{
+    "x0": 1739777674361, //时间戳
+    "x1": "Google Inc. (Intel)ANGLE (Intel, Intel(R) UHD Graphics (0x0000A720) Direct3D11 vs_5_0 ps_5_0, D3D11)", //WebGL信息
+    "x2": "Win32", //系统或硬件平台
+    "x3": 1920, //屏幕分辨率(x)
+    "x4": 1080, //屏幕分辨率(y)
+    "x5": 24, //设备比特深度
+    "x6": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36", //UA
+    "x7": 16, //CPU核心
+    "x8": "zh-CN", //语言
+    "x9": 8, //估算的总RAM
+    "x10": "Asia/Shanghai", //时区
+    "x11": [], //字体信息
+    "x12": "bea060aa90462ebdc4e52e1f00b3c16d", //设备指纹
+    "x13": "/check.php", //请求接口 业务逻辑自行传入
+    "x14": "example" //提交数据 业务逻辑自行传入
+}
+```
+
+
 ## 例子
 SAC提供了前端JavaScript的例子，并为后端常用服务端开发语言提供了例子。
 
