@@ -185,4 +185,4 @@ if path=='/check.php' and data=='{\"data\":\"example\"}':
 else:
     print("Interface verification failed")
 ```
-**In actual use, you only need to configure key and iv, then extract encrypted_data from headers, and then use the remaining logic to verify and complete the business logic. If the verification fails, you can directly return 403. **
+In actual use, you only need to configure key and iv, then extract encrypted_data from headers, and then use the remaining logic to verify and complete the business logic. If the verification fails, you can directly return 403. 
