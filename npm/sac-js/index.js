@@ -1,3 +1,4 @@
+import CryptoJS from "crypto-js";
 class SACDeviceInfo {
     constructor(secretKey, iv) {
         this.secretKey = secretKey || CryptoJS.enc.Utf8.parse('customkey1234567');
@@ -100,4 +101,4 @@ class SACDeviceInfo {
     }
 }
 
-module.exports = SACDeviceInfo;
+export default SACDeviceInfo;

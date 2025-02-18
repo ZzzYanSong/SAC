@@ -129,7 +129,7 @@ SAC提供了前端JavaScript的例子，并为后端常用服务端开发语言�
 ```bash
 npm install sac-aes
 ```
-然后在您的Vue组件导入并使用
+然后在您的业务逻辑中导入
 ```vue
 import { SACDeviceInfo } from "sac-aes";
 ```
@@ -141,6 +141,7 @@ const encryptedData = sac.getDeviceInfo("/path", "data");
 console.log(encryptedData);
 ```
 在请求接口时生成并作为headers参数传入
+示例1
 ```javascript
 const headers = new Headers({
         "Content-Type": "application/json",
@@ -159,6 +160,32 @@ const headers = new Headers({
     })
     .catch(error => console.error('请求失败:', error));
 ```
+示例2
+```javascript
+import { http } from "@/utils/http";
+import { baseUrlApi } from "@/api/utils";
+import SACDeviceInfo from "sac-aes";
+
+const path = "/assets";
+
+const generateDeviceToken = () => {
+  // 这里你可以从 localStorage 或其他地方获取令牌
+  const sac = new SACDeviceInfo("abc1234567890123", "abc1234567890122");
+  const token = sac.getDevice("/path", "data");
+  return token;
+};
+
+const headers = {
+  deviceToken: `${generateDeviceToken()}`, // 动态生成令牌
+  "Content-Type": "application/json"
+};
+export const listAssets = (params?: object) => {
+  return http.request<any>("get", baseUrlApi(`${path}${path}/`), {
+    params,
+    headers
+  });
+};
+```
 ### 后端
 后端请根据您的语言参考对应的示例代码引入业务逻辑  
 以下是使用Python完成对headers的四重验证  
@@ -174,7 +201,7 @@ import time
 secret_key = b'testkey123456789'  # 16 字节密钥
 iv = b'testiv1234567890'  # 16 字节 IV
 
-# 待解密的数据
+# 待解密的数据（实际情况下，是从请求中提取）
 encrypted_data = 'SAC_uDSKBeOt/ytQAY0no23aeqzfXOs27vCJz2bbNIk3XpDs8ya0K+wu9I/ThxXQzwS3v6RlIoVz6vPh7pIarlR8XUdXGDTzrrLlljOR5HtRNfumfY1xExuaKIRYdZ6LrwU5t6UDRtV5FvQJ0994yI8U2W0IPcuIO2bwDsun3t0Iuf3hVUOGh0urTTjMNCjtbwDyTuccdSkeZxslRR16vDuG8kEAfgl22UM5kJeLmCTyLJyzj9PCur/KnRMHPNJqSX5TVaFV5Uu2mHSnDOOS5mzzPROk3O+8C3gOM7DIw/6+fL+y9knDRtC5FV1KZcQNJ7Lqudug5fM4RuYtaUmMflXyhF0wymOWVCZD3QfLz9yXyYnkwxk61nvXuNLCBgjDoCDXX9HsXnBtOuF0CC/nZmgUBXO6mZLlzTYGOSHAxNAjaINJ0UwFdFl7aeL0XVV++zr+Hny4DMel2EytnuZ/KMEYzRYvqUpBFBCQRdOJ1i7Ki9VENBqV+f2KTAk8NSlMqUqKuh3TpOZvAwSobcVZcZBuYlkpSF0LFKUMXyjyiHWuaTG1ocdQrhgCQPBoM0HX0vMku3ebdXDGzAZmXPJle+caNPQ4UZPAIP2zzSzv+1uCx1OWXNmp4NOtCDXRBWyc3JvYQVyawJEC4grO3UNBzlHMUVso3HRgy99duDqlw2bv8wnUHp7G1mCAnwKdLKlpnb0t0yJw6vfc11xi7p/c6O5XWFYg9/EyAqPebS/LZRuASRxwt71i2neRgXYoPrF7fwosSAhP2R4kmp8f0znTBtKZTQ=='
 
 #去除标识字符
