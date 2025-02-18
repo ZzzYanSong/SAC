@@ -115,35 +115,34 @@ SAC提供了前端JavaScript的例子，并为后端常用服务端开发语言�
 ### 前端
 **将前端的JavaScript代码引进您的前端代码中，请务必加密**
 
-要使用，请确保您引入了**CryptoJS**库
-
 您可以根据您的开发情况选择不同的方式引入
 
 #### CDN引入
+要使用，请确保您引入了**CryptoJS**库
 ```javascript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1-crypto-js.js"></script>
 ```
-
+然后从项目的JavaScript目录中的default.js中复制代码
 #### 安装并导入
 ```bash
-npm install crypto-js
+npm install sac-aes
 ```
 然后在您的Vue组件导入并使用
 ```vue
-import CryptoJS from 'crypto-js';
+import { SACDeviceInfo } from "sac-aes";
 ```
 接下来，您可以在您的业务逻辑中使用
 
 ```javascript
-const deviceInfo = new DeviceInfo(customSecretKey, customIv);
-const encryptedData = deviceInfo.getDevice('/path', 'some data');
+const sac = new SACDeviceInfo("key", "iv");
+const encryptedData = sac.getDeviceInfo("/path", "data");
 console.log(encryptedData);
 ```
 在请求接口时生成并作为headers参数传入
 ```javascript
 const headers = new Headers({
         "Content-Type": "application/json",
-        "gid": deviceInfo.getDevice('/api', JSON.stringify({ data: 'example' })) // 将 deviceId 作为 gid 字段附加
+        "gid": sac.getDevice('/api', JSON.stringify({ data: 'example' })) // 将 deviceId 作为 gid 字段附加
     });
 
     // 示例: 使用 fetch 发送请求，附带 headers

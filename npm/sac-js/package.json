@@ -1,0 +1,25 @@
+{
+  "name": "sac-aes",
+  "version": "1.0.0",
+  "description": "简单轻量的Web反爬虫策略",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZzzYanSong/SAC.git"
+  },
+  "dependencies": {
+    "crypto-js": "^4.0.0"
+  },
+  "keywords": [
+    "sac"
+  ],
+  "author": "zhuyansong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZzzYanSong/SAC/issues"
+  },
+  "homepage": "https://github.com/ZzzYanSong/SAC#readme"
+}
