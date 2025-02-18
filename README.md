@@ -115,14 +115,16 @@ SAC提供了前端JavaScript的例子，并为后端常用服务端开发语言�
 ### 前端
 **将前端的JavaScript代码引进您的前端代码中，请务必加密**
 
-您可以根据您的开发情况选择不同的方式引入
+您可以根据您的开发情况选择不同的方式引入:CDN引入/npm安装导入
 
 #### CDN引入
 要使用，请确保您引入了**CryptoJS**库
 ```javascript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1-crypto-js.js"></script>
 ```
-然后从项目的JavaScript目录中的default.js中复制代码
+然后从项目的JavaScript目录中的default.js中复制代码即可
+
+---
 #### 安装并导入
 ```bash
 npm install sac-aes
