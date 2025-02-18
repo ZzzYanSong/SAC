@@ -146,7 +146,7 @@ import { SACDeviceInfo } from "sac-aes";
 
 ```javascript
 const sac = new SACDeviceInfo("key", "iv");
-const encryptedData = sac.getDeviceInfo("/path", "data");
+const encryptedData = sac.getDevice("/path", "data");
 console.log(encryptedData);
 ```
 在请求接口时生成并作为headers参数传入
