@@ -82,6 +82,15 @@ cookie传入方式可以用于记录设备指纹，分析用户行为。
     "x12": "bea060aa90462ebdc4e52e1f00b3c16d", //设备指纹
     "x13": "/check.php", //请求接口 业务逻辑自行传入
     "x14": "example" //提交数据 业务逻辑自行传入
+    "x15": "82f3ad7c", //canvas 2D指纹
+    "x16": "20030107", //productSub
+    "x17": "Google Inc., //浏览器厂商
+    "x18": "Mozilla", //应用代码
+    "x19": "Netscape", //应用名称
+    "x20": "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36,
+    "x21": true, //cookie可用性
+    "x22": null, //doNotTrack
+    "x23": 0, //MaxTouchPoints
 }
 ```
 
